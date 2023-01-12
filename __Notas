@@ -1,0 +1,5 @@
+- Built-in CSS NextJS (defecto)
+
+1. Global CSS (.css)
+2. Module CSS (.module.css)
+3. CSS-in-JS Styled JSX (NextJS - Vercel)
