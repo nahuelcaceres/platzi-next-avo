@@ -3,3 +3,12 @@
 1. Global CSS (.css)
 2. Module CSS (.module.css)
 3. CSS-in-JS Styled JSX (NextJS - Vercel)
+
+
+- Pre-render modes
+cliente side
+server side
+static side
+
+- Server Side Rendering: getServerSideProps
+

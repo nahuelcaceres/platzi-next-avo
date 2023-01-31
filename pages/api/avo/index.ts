@@ -1,12 +1,18 @@
-import { IncomingMessage, ServerResponse } from 'http'
+import { NextApiRequest, NextApiResponse } from 'next'
 import DB from '@database'
-import enablePublicAccess from '@cors'
+// import enablePublicAccess from '@cors'
+import NextCors from "nextjs-cors";
 
-const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
+const allAvos = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     // Generally, you would not want this in your apps.
     // See more in 'cors.js'
-    await enablePublicAccess(req, res)
+    await NextCors(req, res, {
+      methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+      origin: "*",
+      optionsSuccessStatus: 200
+
+    })
 
     const db = new DB()
     const allEntries = await db.getAll()
